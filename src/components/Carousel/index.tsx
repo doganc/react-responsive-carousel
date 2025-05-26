@@ -7,6 +7,8 @@ import getDocument from '../../shims/document';
 import getWindow from '../../shims/window';
 import { noop, defaultStatusFormatter, isKeyboardEvent } from './utils';
 import { AnimationHandler, CarouselProps, CarouselState } from './types';
+import Arrow from './Arrow';
+import Indicator from './Indicator';
 import {
     slideAnimationHandler,
     slideSwipeAnimationHandler,
@@ -43,10 +45,10 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
         onSwipeMove: () => false,
         preventMovementUntilSwipeScrollTolerance: false,
         renderArrowPrev: (onClickHandler: () => void, hasPrev: boolean, label: string) => (
-            <button type="button" aria-label={label} className={klass.ARROW_PREV(!hasPrev)} onClick={onClickHandler} />
+            <Arrow direction="prev" onClickHandler={onClickHandler} enabled={hasPrev} label={label} />
         ),
         renderArrowNext: (onClickHandler: () => void, hasNext: boolean, label: string) => (
-            <button type="button" aria-label={label} className={klass.ARROW_NEXT(!hasNext)} onClick={onClickHandler} />
+            <Arrow direction="next" onClickHandler={onClickHandler} enabled={hasNext} label={label} />
         ),
         renderIndicator: (
             onClickHandler: (e: React.MouseEvent | React.KeyboardEvent) => void,
@@ -54,18 +56,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
             index: number,
             label: string
         ) => {
-            return (
-                <li
-                    className={klass.DOT(isSelected)}
-                    onClick={onClickHandler}
-                    onKeyDown={onClickHandler}
-                    value={index}
-                    key={index}
-                    role="button"
-                    tabIndex={0}
-                    aria-label={`${label} ${index + 1}`}
-                />
-            );
+            return <Indicator onClickHandler={onClickHandler} isSelected={isSelected} index={index} label={label} />;
         },
         renderItem: (item: React.ReactNode) => {
             return item;

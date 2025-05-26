@@ -1,32 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Slider Basics Default Props methods renderArrowNext should return a button 1`] = `
-<button
-  aria-label="next"
-  className="control-arrow control-next"
-  onClick={[MockFunction]}
-  type="button"
+<Arrow
+  direction="next"
+  enabled={true}
+  label="next"
+  onClickHandler={[MockFunction]}
 />
 `;
 
 exports[`Slider Basics Default Props methods renderArrowPrev should return a button 1`] = `
-<button
-  aria-label="prev"
-  className="control-arrow control-prev"
-  onClick={[MockFunction]}
-  type="button"
+<Arrow
+  direction="prev"
+  enabled={true}
+  label="prev"
+  onClickHandler={[MockFunction]}
 />
 `;
 
 exports[`Slider Basics Default Props methods renderIndicator should return a list item 1`] = `
-<li
-  aria-label="slide 1"
-  className="dot selected"
-  onClick={[MockFunction]}
-  onKeyDown={[MockFunction]}
-  role="button"
-  tabIndex={0}
-  value={0}
+<Indicator
+  index={0}
+  isSelected={true}
+  label="slide"
+  onClickHandler={[MockFunction]}
 />
 `;
 
