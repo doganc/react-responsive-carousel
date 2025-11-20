@@ -17,7 +17,6 @@ Pull requests are always welcome. To speed up the review process, please ensure 
 -   Tests covering the changes;
 -   Story (storybook) if it's a new feature;
 -   Green builds;
--   Breaking changes are commited with a message that describes the issue. Example: `BREAKING CHANGE: styles based on class X need to be update to use class Y.`
 
 In order to send a Pull Request, you will need to setup your environment - check instructions below;
 
