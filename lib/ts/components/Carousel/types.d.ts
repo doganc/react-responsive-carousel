@@ -18,7 +18,7 @@ export interface CarouselProps {
     autoPlay?: boolean;
     centerMode?: boolean;
     centerSlidePercentage: number;
-    children?: React.ReactChild[];
+    children?: (React.ReactElement | number | string)[];
     className?: string;
     dynamicHeight?: boolean;
     emulateTouch?: boolean;
@@ -43,7 +43,7 @@ export interface CarouselProps {
         isSelected: boolean;
         isPrevious: boolean;
     }) => React.ReactNode;
-    renderThumbs: (children: React.ReactChild[]) => React.ReactChild[];
+    renderThumbs: (children: (React.ReactElement | number | string)[]) => (React.ReactElement | number | string)[];
     selectedItem: number;
     showArrows: boolean;
     showStatus: boolean;

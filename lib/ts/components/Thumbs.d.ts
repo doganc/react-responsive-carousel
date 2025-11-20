@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 export interface Props {
     axis: 'horizontal' | 'vertical';
-    children: React.ReactChild[];
+    children: (React.ReactElement | number | string)[];
     labels: {
         leftArrow: string;
         rightArrow: string;
